@@ -1,3 +1,4 @@
+// xxima
 text("我可申请").click()
 var isRefresh = true
 var isAll = false
