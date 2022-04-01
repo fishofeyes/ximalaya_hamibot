@@ -10,8 +10,19 @@ function doTask() {
     textContains("我已阅读并同意").findOne().click()
     text("微信授权登录").findOne().click()
     text("允许").findOne().click()
+    text("手机号登录").findOne().click()
+    var l = className("android.widget.EditText").find()
+    l[0].click()
+    input("18384581796")
+    l[1].click()
+    inputCode("123456")
+    text("登录").click()
 }
 
-text("手机号登录").findOne().click()
+function inputCode(code) {
+    for (var i = 0; i < code.length; i++) {
+        desc(code.charAt(i)).click()
+    }
+}
 
-//doTask()
+doTask()
