@@ -1,12 +1,15 @@
 const { time } = hamibot.env;
 function task() {
     // xxima
+    sleep(1000)
+    text("全部").click()
     text("我可申请").click()
     var isRefresh = true
     var isAll = false
     var index = 0
+    sleep(500)
     while(isRefresh) {
-        if (text('暂时没有内容～').exists()) {
+        if (text('暂时还没有任务哦～').exists()) {
             text("全部").click()
             sleep(500)
         } else {
@@ -39,8 +42,10 @@ function doTask() {
     swipe(243, 460, 243, 1336, 500)
     desc("喜播学堂,").click()
     text("有声主播").click()
+    sleep(500)
     swipe(300, 2094, 300, 705, 500)
+    sleep(500)
     text("开启任务").click()
-    taskt()
+    task()
 }
 setScheduledTask(time - 1, 59, doTask);
